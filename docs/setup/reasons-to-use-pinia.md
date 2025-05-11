@@ -70,14 +70,14 @@ const counter = useCounterStore()
 ---
 
 ### **Why Pinia Over Vuex?**
-| Feature               | Pinia                  | Vuex 4          |
-|-----------------------|------------------------|-----------------|
-| Vue 3 Support         | ✅ First-class        | ✅ Compatible   |
-| TypeScript            | ✅ Full inference     | ❌ Limited      |
-| Boilerplate           | 40% less code         | More verbose    |
-| Composition API       | ✅ Native support     | ❌ Adaptor      |
-| Modules               | Auto-namespaced stores| Manual namespacing |
-| DevTools              | ✅ Built-in           | ✅ Works        |
+| Feature         | Pinia                  | Vuex 4             |
+| --------------- | ---------------------- | ------------------ |
+| Vue 3 Support   | ✅ First-class          | ✅ Compatible       |
+| TypeScript      | ✅ Full inference       | ❌ Limited          |
+| Boilerplate     | 40% less code          | More verbose       |
+| Composition API | ✅ Native support       | ❌ Adaptor          |
+| Modules         | Auto-namespaced stores | Manual namespacing |
+| DevTools        | ✅ Built-in             | ✅ Works            |
 
 ---
 
