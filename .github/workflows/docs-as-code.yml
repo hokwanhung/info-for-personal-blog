@@ -13,6 +13,23 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Debug Files
+        run: find . -name "*.md" || echo "No .md files found"
+      - name: Test Confluence API Connection
+        run: |
+          echo "Testing Confluence API access..."
+          RESPONSE=$(curl -s -u "${{ secrets.USERNAME }}:${{ secrets.API_TOKEN }}" \
+            "${{ secrets.BASE_URL }}/rest/api/space/${{ secrets.SPACE_KEY }}")
+          echo "API Response: $RESPONSE"
+          if [[ $RESPONSE == *"\"statusCode\":401"* ]]; then
+            echo "ERROR: Unauthorized (check username/api_token)"
+            exit 1
+          elif [[ $RESPONSE == *"\"statusCode\":404"* ]]; then
+            echo "ERROR: Space not found (check space-key)"
+            exit 1
+          else
+            echo "✅ Confluence API access successful!"
+          fi
       - name: Sync Docs as Code - Confluence
         uses: Bhacaz/docs-as-code-confluence@v3
         with:
