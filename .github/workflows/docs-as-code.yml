@@ -4,8 +4,8 @@ on:
     branches:
       - main
     paths:
-      - "*"
-      - "!.github/**"
+      - "docs/**"
+
 jobs:
   docs-as-code:
     runs-on: ubuntu-latest
@@ -40,7 +40,7 @@ jobs:
       - name: Sync Docs as Code - Confluence
         uses: Bhacaz/docs-as-code-confluence@v3
         with:
-          folder: ${{ steps.find-files.outputs.files_json }}
+          folder: docs
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.API_TOKEN }}
           confluence-base-url: ${{ secrets.BASE_URL }}
