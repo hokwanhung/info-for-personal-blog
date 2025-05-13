@@ -147,26 +147,26 @@ This document clarifies the **structure**, **functionality**, **layout**, and **
 
 ### **4. Technology Stack**  
 #### **Frontend**  
-| Tool               | Usage                                   |  
-|--------------------|-----------------------------------------|  
-| **Vue 3**          | Core framework.                         |  
-| **Quasar**         | UI components & mobile responsiveness.  |  
-| **Pinia**          | State management (auth, tasks).         |  
-| **Firebase SDK**   | Real-time data (Firestore) + auth.      |  
-| **js-cookie**      | Manage session cookies for view tracking. |  
+| Tool             | Usage                                     |
+| ---------------- | ----------------------------------------- |
+| **Vue 3**        | Core framework.                           |
+| **Quasar**       | UI components & mobile responsiveness.    |
+| **Pinia**        | State management (auth, tasks).           |
+| **Firebase SDK** | Real-time data (Firestore) + auth.        |
+| **js-cookie**    | Manage session cookies for view tracking. |
 
 #### **Backend**  
-| Tool               | Usage                                   |  
-|--------------------|-----------------------------------------|  
-| **Firebase**       | Auth, Firestore, Storage, Analytics.    |  
-| **Auth0**          | Instagram OAuth integration.            |  
-| **Java/Spring Boot** | Future migration (replaces Firebase). |  
+| Tool                 | Usage                                 |
+| -------------------- | ------------------------------------- |
+| **Firebase**         | Auth, Firestore, Storage, Analytics.  |
+| **Auth0**            | Instagram OAuth integration.          |
+| **Java/Spring Boot** | Future migration (replaces Firebase). |
 
 #### **Deployment**  
-| Tool               | Usage                                   |  
-|--------------------|-----------------------------------------|  
-| **Firebase Hosting** | Deploy main blog, Sooon.ai, and Resources. |  
-| **Google Cloud**   | Host Admin Panel (Cloud Run) + backups. |  
+| Tool                 | Usage                                      |
+| -------------------- | ------------------------------------------ |
+| **Firebase Hosting** | Deploy main blog, Sooon.ai, and Resources. |
+| **Google Cloud**     | Host Admin Panel (Cloud Run) + backups.    |
 
 ---
 
