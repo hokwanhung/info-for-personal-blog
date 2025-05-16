@@ -18,8 +18,8 @@ jobs:
         uses: tj-actions/changed-files@v46
         with:
           files: |
-            *.md
-            docs/*.md
+            **.md
+            docs/**.md
       - name: Find Changed Markdown Files
         id: find-files
         if: steps.changed-docs.outputs.any_changed == 'true'
