@@ -13,16 +13,25 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Find All Markdown Files
+      - name: Detect docs changes
+        id: changed-docs
+        uses: tj-actions/changed-files@v46
+        with:
+          files: |
+            *.md
+            docs/*.md
+      - name: Find Changed Markdown Files
         id: find-files
+        if: steps.changed-docs.outputs.any_changed == 'true'
+        env:
+          CHANGED_FILES: ${{ steps.changed-docs.outputs.all_changed_files }}
         run: |
-          # Get all .md files except those in .github/
-          files=$(find . -path "./.github" -prune -o -type f -name "*.md" -print)
-          echo "Found files:"
-          echo "$files"
+          echo "Changed files:"
+          echo "$CHANGED_FILES"
           # Format as JSON array for multi-file processing
-          echo "files_json=$(echo "$files" | jq -R -s -c 'split("\n")[:-1]')" >> $GITHUB_OUTPUT
+          echo "files_json=$(echo "$CHANGED_FILES" | jq -R -s -c 'split("\n")[:-1]')" >> $GITHUB_OUTPUT
       - name: Test Confluence API Connection
+        if: steps.changed-docs.outputs.any_changed == 'true'
         run: |
           echo "Testing Confluence API access..."
           RESPONSE=$(curl -s -u "${{ secrets.USERNAME }}:${{ secrets.API_TOKEN }}" \
@@ -38,6 +47,7 @@ jobs:
             echo "✅ Confluence API access successful!"
           fi
       - name: Sync Docs as Code - Confluence
+        if: steps.changed-docs.outputs.any_changed == 'true'
         uses: Bhacaz/docs-as-code-confluence@v3
         with:
           folder: docs
