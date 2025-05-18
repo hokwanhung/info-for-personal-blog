@@ -117,11 +117,11 @@ Heavy animations can slow down your site. Optimize with:
 ---
 
 ### **Cost Estimate**
-| Task                   | DIY (No-Code) | Hire Freelancer |
-|------------------------|---------------|-----------------|
-| Template + Animations  | $50-$200      | $500-$2000      |
-| Hosting                | $10-$30/month | Included        |
-| Maintenance            | Self-managed  | $50-$100/month  |
+| Task                  | DIY (No-Code) | Hire Freelancer |
+| --------------------- | ------------- | --------------- |
+| Template + Animations | $50-$200      | $500-$2000      |
+| Hosting               | $10-$30/month | Included        |
+| Maintenance           | Self-managed  | $50-$100/month  |
 
 ---
 
